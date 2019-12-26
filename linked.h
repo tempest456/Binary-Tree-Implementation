@@ -1,7 +1,7 @@
 #ifndef LINKED_H
 #define LINKED_H
 
-#include
+#include "binarytree.h"
 
 class Node
 {
@@ -11,10 +11,12 @@ class Node
     Node *right;
 }
 
-class linkedBST : public BinarySearchTree
+class LinkedBST : public BinarySearchTree
 {
     Node *root;
     public:
+        LinkedBST();
+        ~LinkedBST();
         void preorderTraversal();
         void add(int data);
         bool search (int data);
