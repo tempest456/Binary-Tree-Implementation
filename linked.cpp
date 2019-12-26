@@ -8,9 +8,9 @@ LinkedBST::LinkedBST()
 
 LinkedBST::~LinkedBST(){}
 
-void LinkedBST::add(int data)
+void LinkedBST::add(Node* root,int data)
 {
-    if root==NULL
+    if (root==NULL)
     {
         root->data=data;
     }
@@ -21,8 +21,7 @@ void LinkedBST::add(int data)
         {
             if (root->right!=NULL)
             {
-                root=root->right;
-                add(data);
+                add(root->right,data);
             }
 
             else
@@ -37,8 +36,7 @@ void LinkedBST::add(int data)
         {
             if(root->left!=NULL)
             {
-                root=root->left;
-                add(data);
+                add(root->left,data);
             }
             else
             {
@@ -49,5 +47,5 @@ void LinkedBST::add(int data)
             
         }
     }
-    
 }
+

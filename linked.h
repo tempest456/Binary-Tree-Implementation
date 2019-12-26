@@ -9,7 +9,7 @@ class Node
     int data;
     Node *left;
     Node *right;
-}
+};
 
 class LinkedBST : public BinarySearchTree
 {
@@ -18,7 +18,7 @@ class LinkedBST : public BinarySearchTree
         LinkedBST();
         ~LinkedBST();
         void preorderTraversal();
-        void add(int data);
+        void add(Node* root,int data);
         bool search (int data);
 };
 
