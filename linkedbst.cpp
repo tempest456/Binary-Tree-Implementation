@@ -91,12 +91,26 @@ int LinkedBST::max(Node *root)
     {
         cout<<"Null Tree"<<endl;
     }
-    else
+    else if(root->right==NULL)
     {
-        if(root->right==nullptr)
-		return root->data;
-	
+        return root->data;
+	}
 	else
 		max(root->right);
-    }
 }
+
+    
+int LinkedBST::min(Node *root)
+{
+    if(root->data==0)
+    {
+        cout<<"Null Tree"<<endl;
+    }
+    else if(root->left==NULL)
+    {
+        return root->data;
+	}
+	else
+		min(root->left);
+}
+

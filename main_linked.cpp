@@ -16,10 +16,13 @@ int main()
     l.preorderTraversal(&l.root);
     cout<<endl;
     
-    if(l.search(&l.root,11))
+    if(l.search(&l.root,8))
 		cout<<"Item Found"<<endl;
 	else
 		cout<<"Item not found"<<endl;
 
 	cout<<l.max(&l.root)<<endl;
+	cout<<l.min(&l.root)<<endl;
+	
+	return 0;
 }
