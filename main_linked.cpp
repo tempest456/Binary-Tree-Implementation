@@ -1,8 +1,23 @@
 #include<iostream>
-#include "linked.h"
+using namespace std;
+#include "linkedbst.cpp"
 
 int main()
 {
     LinkedBST l;
-    l.add(5);
+    l.add(&l.root,3);
+    l.add(&l.root,31);
+    l.add(&l.root,23);
+    l.add(&l.root,13);
+    l.add(&l.root,8);
+    l.add(&l.root,1);
+    
+    cout<<"preorder traversal:\n";
+    l.preorderTraversal(&l.root);
+    cout<<endl;
+    
+    if(l.search(&l.root,11))
+		cout<<"Item Found"<<endl;
+	else
+		cout<<"Item not found"<<endl;
 }
