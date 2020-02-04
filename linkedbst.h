@@ -34,19 +34,22 @@ class LinkedBST : public BinarySearchTree
 		~LinkedBST();
 
 		//abstract class functions
-		void preorderTraversal(){};
-		void add(int data){};
-		bool search (int data){};
-		int max(){};
-		int min(){};
-
-
+		void preorderTraversal(){}
+		void inorderTraversal(){}
+		void add(int data){}
+		bool search (int data){}
+		int max(){}
+		int min(){}
+		void remove(int data){}
+		
 		//function overloading for this class
 		void preorderTraversal(Node *root);
+		void inorderTraversal(Node *root);
 		void add(Node *root,int data);
 		bool search(Node *root,int data);
 		int max(Node *root);
 		int min(Node *root);
+		void remove(Node *root,int data);
 };
 
 #endif

@@ -84,6 +84,18 @@ void LinkedBST::preorderTraversal(Node *root)
 	
 }
 
+void LinkedBST::inorderTraversal(Node *root)
+{
+	if(!root)
+		return;
+	
+	inorderTraversal(root->left);
+
+	cout<<root->data<<"\t";
+	
+	inorderTraversal(root->right);
+	
+}
 
 int LinkedBST::max(Node *root)
 {
@@ -114,3 +126,18 @@ int LinkedBST::min(Node *root)
 		min(root->left);
 }
 
+void LinkedBST::remove(Node *root,int data)
+{
+	if (!search(&root,data))
+	{
+		cout<<"No node to remove"<<endl;
+	}
+
+	else
+	{
+		if(root->data==data)
+		{
+			
+		}
+	}
+}
