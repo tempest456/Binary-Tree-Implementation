@@ -20,4 +20,6 @@ int main()
 		cout<<"Item Found"<<endl;
 	else
 		cout<<"Item not found"<<endl;
+
+	cout<<l.max(&l.root)<<endl;
 }

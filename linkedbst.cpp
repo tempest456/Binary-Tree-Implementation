@@ -85,4 +85,18 @@ void LinkedBST::preorderTraversal(Node *root)
 }
 
 
-
+int LinkedBST::max(Node *root)
+{
+    if(root->data==0)
+    {
+        cout<<"Null Tree"<<endl;
+    }
+    else
+    {
+        if(root->right==nullptr)
+		return root->data;
+	
+	else
+		max(root->right);
+    }
+}
