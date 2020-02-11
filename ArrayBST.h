@@ -1,17 +1,39 @@
+#pragma once
+#define MAX_SIZE 1000
 #include "binarytree.h"
-#define MAX_SIZE 16
 
-class ArrayBST : public BinarySearchTree
-{
+class Node {
+	public:
+	    int key;
+	    int data;
 
-    public:
-        int elements[MAX_SIZE];
-        ArrayBST();
-        ~ArrayBST();
-        void preorderTraversal();
-        void add(int data);
-        bool search(int data);
+  	Node(){}
 };
 
+class BinaryTree:public BinarySearchTree{
+    public:
+    	BinaryTree();
 
+    	void add(int);
+    	int find(int);
+    	bool search(int);
+    	void preorderTraversal();
+    	bool isEmpty();
+    	int max();
+    	int min();
+
+    private:
+        Node* datas[MAX_SIZE];
+        void addToIndex(int , Node*);
+        void traverseVLR(Node* );
+        void insert(Node* , Node* , int);
+        int  size(Node* root);
+        int getRightChildIndex(int);
+        int getLeftChildIndex(int );
+        bool findInNode(Node* , int );
+        int findRootInNode(Node* ,int);
+        int getMax(Node*);
+        int getMin(Node*);
+
+};
 
