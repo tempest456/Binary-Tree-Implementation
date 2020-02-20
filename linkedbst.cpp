@@ -126,18 +126,116 @@ int LinkedBST::min(Node *root)
 		min(root->left);
 }
 
-void LinkedBST::remove(Node *root,int data)
+void LinkedBST::removebst(Node *root,int keytoDelete)
 {
-	if (!search(&root,data))
+	/*
+	if (!search(root,dlt))
 	{
-		cout<<"No node to remove"<<endl;
+		cout<<"No node found to delete"<<endl;
+		return;
 	}
 
 	else
 	{
-		if(root->data==data)
+		if(dlt<root->data)
 		{
+			removebst(root->left,dlt);
+		}
+		else if (dlt>root->data)
+		{
+			removebst(root->right,dlt);
+		}
+		else
+		{
+			if(root->left==NULL)
+			{
+				Node *temp=new Node();
+				temp=root->right;
+				root->data=temp->data;
+				root->right=temp->right;
+				delete temp;
+				return;
+			}
 			
+			else if(root->right==NULL)
+			{
+				Node *temp=new Node();
+				temp=root->left;
+				root->data=temp->data;
+				root->left=temp->left;
+				delete temp;
+				return;
+			}
+			
+			else
+			{
+				Node *temp=new Node();
+				temp=root;
+				root->data=temp->data;
+				root->left=temp->left;
+				delete temp;
+				return;
+			}
 		}
 	}
+	*/
+	int dat;
+    if(root==NULL){
+        cout<<"tree is empty"<<endl;
+        return;
+    }
+    if(keytoDelete<root->data){
+        Node* temp=new Node();
+        temp=root->left;
+        if(root->left->data==keytoDelete && root->left->left==NULL && root->left->right==NULL){
+            root->left=NULL;
+        }
+        removebst(temp,keytoDelete);
+        return;
+    }
+    else if(keytoDelete>root->data){
+        Node* temp=new Node();
+        temp=root->right;
+        if(root->right->data==keytoDelete && root->right->left==NULL && root->right->right==NULL){
+            root->right=NULL;
+        }
+        removebst(temp,keytoDelete);
+        return;
+    }
+    else{
+        if(root->left==NULL && root->right==NULL){
+            delete root;
+            root=NULL;
+            return;
+        }
+        else if(root->left==NULL){
+            Node* temp=new Node();
+            temp=root->right;
+            root->data=root->right->data;
+            root->right=root->right->right;
+            delete temp;
+            return;
+        }
+        else if(root->right==NULL){
+            Node* temp=new Node();
+            temp=root->left;
+            root->data=root->left->data;
+            root->left=root->left->left;
+            delete temp;
+            return;
+        }
+        else{
+            Node* nodetoDelete=new Node();
+            nodetoDelete=root;
+            Node* newNode=new Node();
+            newNode=root->left;
+            while(newNode->right!=NULL){
+                newNode=newNode->right;
+            }
+            dat=newNode->data;
+            removebst(nodetoDelete,newNode->data);
+            root->data=dat;
+            return;
+        }
+    }
 }

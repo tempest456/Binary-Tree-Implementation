@@ -40,7 +40,7 @@ class LinkedBST : public BinarySearchTree
 		bool search (int data){}
 		int max(){}
 		int min(){}
-		void remove(int data){}
+		void removebst(int data){}
 		
 		//function overloading for this class
 		void preorderTraversal(Node *root);
@@ -49,7 +49,7 @@ class LinkedBST : public BinarySearchTree
 		bool search(Node *root,int data);
 		int max(Node *root);
 		int min(Node *root);
-		void remove(Node *root,int data);
+		void removebst(Node *root,int data);
 };
 
 #endif
